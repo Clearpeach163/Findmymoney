@@ -1,24 +1,36 @@
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: antiquewhite;
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-image: url("../Src/Wallpaper.jpg");
+    background-image: url("../Src/wallpaper.png");
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+    user-select: none;
+    margin: 0;
+    min-height: 100vh;
 }
+
+
+/* NAVIGATION */
+
 #nav {
-    width: 80%;
+    width: min(90%, 1100px);
     margin-top: 1%;
     left: 50%;
-    padding: 14px;
-    box-shadow:inset 0px 0px 11px 8px #ffffff1b;
+    padding: 10px 20px;
+    box-shadow: inset 0px 0px 11px 8px #ffffff1b;
     position: fixed;
     transform: translate(-50%);
     background-color: rgba(255, 255, 255, 0.085);
     border-radius: 1000px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     flex-direction: row;
@@ -26,81 +38,133 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     gap: 12px;
+    height: auto;
+    min-height: 65px;
+    transition: 0.2s all;
 }
+
+#nav:hover {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
 #nav button {
-    
     border: none;
     background-color: #ffffff00;
     color: white;
     border-radius: 100000px;
     padding: 10px;
     font-size: medium;
-    width: 8%;
+    width: auto;
+    min-width: 90px;
     transition: all 0.3s;
-
 }
+
 #nav button:hover {
-    background-color: rgba(182, 182, 182, 0.183);
+    background-color: rgba(182, 182, 182, 0.234);
     cursor: pointer;
 }
-#hero {
-    
+
+#logo {
+    height: 50px;
+    width: 50px;
+    left: 15px;
+    position: absolute;
+    -webkit-filter: invert(1);
 }
+
+
+/* HERO */
+
+#hero {
+}
+
+#Title {
+    left: 50%;
+    top: 20%;
+    position: absolute;
+    transform: translate(-50%);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    width: 100%;
+    text-align: center;
+    padding: 0 15px;
+}
+
+#slogan {
+    left: 50%;
+    top: 30%;
+    margin-top: 5%;
+    position: absolute;
+    transform: translate(-50%);
+    font-size: clamp(1rem, 3vw, 2rem);
+    width: 90%;
+    text-align: center;
+    user-select: none;
+}
+
+
+/* GET STARTED */
+
 #getstarted {
     border-radius: 30000px;
-    padding: 10px;
-    width: 10%;
-    border: 2px;
+    padding: 15px;
+    width: min(80%, 220px);
     color: white;
-
-}
-#circles {
-        background: repeating-radial-gradient(
-        circle at center,
-        transparent 0 10%,
-        rgba(70, 255, 159, 0.282) 10% 10.1%,
-        transparent 10.3% 19.8%
-    );
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: -1900;
-    top: 0;
-    left: 0;
-}
-
-
-.sweep {
-    z-index: -100;
-    position: fixed;
-    width: 150vmax;
-    height: 150vmax;
+    background-color: #ffffff00;
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0px 0px 11px 8px #ffffff1b;
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-
-    background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 275deg,
-        rgba(70, 255, 159, 0.005) 290deg,
-        rgba(70, 255, 159, 0.015) 310deg,
-        rgba(70, 255, 159, 0.04) 330deg,
-        rgba(70, 255, 159, 0.10) 345deg,
-        rgba(70, 255, 159, 0.258) 355deg,
-        rgba(70, 255, 159, 0.454) 360deg
-    );
-
-    animation: radar-spin 25s linear infinite;
-    pointer-events: none;
+    top: 60%;
+    position: absolute;
+    transform: translate(-50%);
+    transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    font-size: 1rem;
 }
 
-@keyframes radar-spin {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
+#getstarted:hover {
+    background-color: #97979732;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0px 0px 11px 8px #ffffff0a;
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.325);
+    transform: translate(-50%) scale(1.05);
+    
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    #nav {
+        width: 94%;
+        gap: 4px;
+        padding: 8px;
     }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
+
+    #nav button {
+        min-width: 0;
+        flex: 1;
+        padding: 10px 4px;
+        font-size: 12px;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    #Title {
+        top: 25%;
+    }
+
+    #slogan {
+        top: 34%;
+        margin-top: 4%;
+    }
+
+    #getstarted {
+        top: 55%;
     }
 }
