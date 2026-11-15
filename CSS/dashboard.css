@@ -1,0 +1,202 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    padding: 35px;
+}
+.main {
+    display: flex;
+    height: 100%;
+    border-radius: 35px;
+    background-color: rgba(255, 255, 255, 0.068);
+        backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: inset 0px 0px 11px 8px #ffffff1b;
+    overflow: hidden;
+}
+
+#sidebar {
+    width: 230px;
+    flex-shrink: 0;
+    margin: 10px;
+    border-radius: 25px;
+        background-color: rgba(76, 109, 253, 0.263);
+        backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: inset 0px 0px 11px 8px #ffffff1b;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#account {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+#icon {
+    background-color: darkgoldenrod;
+    border-radius: 100px;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-weight: 600;
+    font-size: 20px;
+        box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.60),
+    0 2px 8px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+    transition: 1s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+#icon:hover {
+            box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.90),
+    0 2px 8px rgba(0, 0, 0, 0.50),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+    transform: translateY(-3px);
+}
+#account-label {
+    font-size: 16px;
+    font-weight: 600;
+}
+.top, .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+
+    
+}
+.top button, .bottom button {
+    padding: 12px;
+    border-radius: 150px;
+    text-align: start;
+    padding-left: 25px;
+        border-radius: 30000px;
+  
+    color: white;
+    background-color: #ffffff00;
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0px 0px 11px 8px #ffffff1b;
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    font-size: 1rem;
+}
+.top button:hover {
+    background-color: #97979732;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0px 0px 11px 8px #ffffff0a;
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.325);
+    transform: scale(1.02);
+    
+}
+#dashboard {
+    flex: 1;
+    min-width: 0;
+    padding: 35px;
+}
+
+#welcome {
+    background-color: rgba(128, 0, 128, 0);
+    width: 100%;
+    display: flex;
+    margin-bottom: 35px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#dropdown {
+    appearance: none;
+    border-radius: 100px;
+    padding: 10px 35px 10px 10px; 
+    border: 2px solid #0071E3; 
+    color: #0071E3;
+    font-weight: 100;
+    cursor: pointer;
+    text-align: start;
+
+
+        background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    outline: none;
+}
+
+#new {
+    background-color: #0071E3;
+        border: none;
+    
+    color: white;
+    border-radius: 100000px;
+    padding: 10px 25px 10px 25px;
+    font-size: medium;
+    font-weight: lighter;
+    margin: 10px;
+    transition: 0.1s all;
+}
+#new:hover {
+    background-color: #0067cd;
+}
+.cards-window {
+    display: flex;
+    gap: 15px;
+}
+.card {
+        width: 300px;
+    height: 100px;
+    
+    padding: 20px;
+    background-color: rgba(122, 234, 217, 0.002);
+    border-radius: 25px;
+        backdrop-filter: blur(8px);
+    box-shadow: inset 0px 0px 41px 15px #ffffff1b;
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#balance-euro {
+    font-size: 30px;
+}
+#balance-full {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+#lastmonth {
+    margin-left: auto;
+    color: #54f5cace;
+    background-color: #1ee6cf77;
+    padding: 10px;
+    border-radius: 1000px;
+    transform: translateY(-5px);
+}
+#spending {
+
+}
+/* all seperate elements with custom styling*/
+#logout {
+    color: rgb(181, 98, 98);
+    border: 3px solid rgba(219, 90, 90, 0.558);
+    background-color: rgba(105, 71, 71, 0);
+}
+#msg {
+    margin-bottom   : 10px;
+}
+#trend {
+
+}

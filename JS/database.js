@@ -32,3 +32,33 @@ async function createAccount(username, email, password) {
     console.log("Account created:", data);
     alert("Account successfully created!");
 }
+
+async function saveTransaction(amount, type, description, category) {
+
+    // Get logged-in user
+    const { data: { user }, error: userError } =
+        await supabaseClient.auth.getUser();
+
+    if (userError || !user) {
+        console.error("User not logged in:", userError);
+        return;
+    }
+
+    // Save transaction
+    const { data, error } = await supabaseClient
+        .from("transactions")
+        .insert({
+            user_id: user.id,
+            amount: amount,
+            type: type,
+            description: description,
+            category: category
+        });
+
+    if (error) {
+        console.error("Transaction error:", error.message);
+        return;
+    }
+
+    console.log("Transaction saved!");
+} 

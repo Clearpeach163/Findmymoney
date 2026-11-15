@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="shortcut icon" href="../Src/favoicon.png" type="image/x-icon">
+   
+</head>
+<body>
+    <div class="main">
+        <aside id="sidebar">
+            <div class="top">
+                <div id="account">
+                    <div id="icon">D</div>
+                    <label id="account-label">David</label>
+                </div>
+                <button>nav 1</button>
+                <button>nav 2</button>
+                <button>nav 1</button>
+                <button>nav 2</button>
+            </div>
+            <div class="bottom">
+                <button id="logout">Log out</button>
+            </div>
+        </aside>
+
+        <div id="dashboard">
+            <header id="welcome">
+                <div id="welcome-left">
+                    <h1 id="msg">Hey David,</h1>
+                    <p id="trend">Looks like your spending more than usual.</p>
+                </div>
+                <div id="welcome-right">
+                    <select name="time" class="time" id="dropdown">
+                        <option value="1-week">1 Week</option>
+                        <option value="1-month">1 Month</option>
+                        <option value="6-months">6 Months</option>
+                        <option value="ytd">YTD</option>
+                        <option value="1-year">1 year</option>
+                        <option value="Max">Max</option>
+                        <option value="all-data"></option>
+                    </select>
+                    <button class="time" id="new">New +</button>
+                </div>
+            </header>
+            <div class="cards-window">
+                <div id="balance" class="card">
+                    <p>Balance</p>
+                    <div id="balance-full">
+                        <h1 id="balance-euro">&euro;Error 404</h1>
+                        <div id="lastmonth">Error 404</div>
+                    </div>
+                </div>
+                <div id="spending" class="card">
+                    <h2>Spending</h2>
+                </div>
+                <div id="earnings" class="card">
+                    <h2>Earnings</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+     <script src="../JS/Dashboard.js"></script>
+</body>
+</html>

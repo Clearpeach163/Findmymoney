@@ -23,5 +23,5 @@ async function login() {
     }
 
     console.log("Successfully logged in:", data);
-    alert("Welcome back!");
+    location.href = '../HTML/Dashboard.html';
 }
