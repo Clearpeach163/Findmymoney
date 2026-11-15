@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../CSS/Signup-login.css">
+
+    <title>Login</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../JS/database.js" defer></script>
+    <script src="../JS/login.js" defer></script>
+</head>
+
+<body>
+
+    <div id="Signup">
+        <h1>Welcome</h1>
+        <p>Login to continue where you left.</p>
+
+        <input type="email" id="email"
+            placeholder="Email" autocomplete="email" required>
+
+        <input type="password" id="password"
+            placeholder="Password" autocomplete="current-password" required>
+
+        <button onclick="login()" type="button">
+            Login
+        </button>
+    </div>
+
+</body>
+</html>

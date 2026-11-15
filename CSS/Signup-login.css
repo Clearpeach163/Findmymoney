@@ -1,0 +1,116 @@
+
+* {
+    box-sizing: border-box;
+    overscroll-behavior: none;
+}
+
+body {
+    background-color: antiquewhite;
+    color: white;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', sans-serif;
+
+    background-image: url("../Src/wallpaper.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    user-select: none;
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+/* Signup card */
+
+#Signup {
+    width: 100%;
+    max-width: 420px;
+    backdrop-filter: blur(2px);
+    box-shadow: inset 0px 0px 11px 8px #ececec12;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 45px 35px;
+    background-color: rgba(255, 255, 255, 0.197);
+    border-radius: 50px;
+
+}
+
+/* Heading */
+
+#Signup h1 {
+    font-size: 30px;
+    font-weight: 650;
+    margin: 0 0 5px;
+    text-align: center;
+}
+
+#Signup p {
+    font-size: 14px;
+    opacity: 0.75;
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+/* Inputs */
+
+#Signup input {
+    width: 100%;
+    padding: 15px 18px;
+
+    border: none;
+    margin-bottom: 14px;
+    border-radius: 1000px;
+    
+    font-size: 1rem;
+        color: white;
+    background-color: #ffffff00;
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0px 0px 11px 8px #ffffff26;
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+#Signup input::placeholder {
+    color: rgba(238, 238, 238, 0.701);
+}
+#Signup input:hover {
+    transform: scale(1.015);
+}
+
+
+/* Button */
+
+#Signup button{
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 1000px;
+    font-size: 1rem;
+        color: white;
+    background-color: #ffffff00;
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0px 0px 11px 8px #ffffff26;
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+#Signup button:hover {
+    box-shadow: inset 0px 0px 11px 8px #ffffff14;
+    transform: scale(1.02);
+}
+/* Mobile */
+
+@media (max-width: 480px) {
+    #Signup {
+        padding: 35px 25px;
+        border-radius: 28px;
+    }
+}
