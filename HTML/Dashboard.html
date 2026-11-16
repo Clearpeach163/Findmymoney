@@ -32,7 +32,7 @@
         <div id="dashboard">
             <header id="welcome">
                 <div id="welcome-left">
-                    <h1 id="msg"></h1>
+                    <h1 id="msg">Hey ...</h1>
                     
                     <p id="trend">Looks like your spending more than usual.</p>
                 </div>
@@ -46,7 +46,15 @@
                         <option value="Max">Max</option>
                         <option value="all-data"></option>
                     </select>
-                    <button class="time" id="new" title="Add a new transaction">New +</button>
+                        <div class="new-dropdown">
+                            <button id="new" onclick="toggleDropdown()">New +</button>
+
+                            <div id="new-menu" class="new-menu">
+                                <button onclick="updateValue('balance')">Update balance</button>
+                                <button onclick="updateValue('spendings')">Update spendings</button>
+                                <button onclick="updateValue('earnings')">Update earnings</button>
+                            </div>
+                        </div>
                 </div>
             </header>
             <div class="cards-window">
@@ -93,6 +101,55 @@
     </div>
     <script src="../JS/Dashboard.js" type="module"></script>
     <script src="../JS/charts.js" defer></script>
-    
+    <script>
+
+async function Write(column, value) {
+
+    // Get logged-in user
+    const { data: { user }, error: userError } =
+        await supabaseClient.auth.getUser();
+
+    if (userError || !user) {
+        console.error("User not logged in");
+        return;
+    }
+
+    // Write to database
+    const { error } = await supabaseClient
+        .from("user_stats")
+        .update({
+            [column]: value
+        })
+        .eq("id", user.id);
+
+    if (error) {
+        console.error("Database error:", error);
+        return false;
+    }
+
+    console.log("Saved successfully!");
+        document.getElementById("new-menu").classList.remove("show");
+    location.reload();
+    return true;
+}
+
+function toggleDropdown() {
+    document.getElementById("new-menu").classList.toggle("show");
+}
+
+async function updateValue(column) {
+
+    const amount = Number(prompt("Enter new " + column + ":"));
+
+    if (!Number.isFinite(amount) || amount < 0) {
+        alert("Please enter a valid amount.");
+        return;
+    }
+
+    await Write(column, amount);
+
+    document.getElementById("new-menu").classList.remove("show");
+}
+    </script>
 </body>
 </html> 

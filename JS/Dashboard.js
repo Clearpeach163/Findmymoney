@@ -15,10 +15,10 @@ async function setconsts() {
     const Name = (await Get("full_name")) ?? "Error loading name";
     const Balance = (await Get("balance")) ?? 0;
     const spendings = (await Get("spendings")) ?? "404Error";
-    const spendings_lastmonth = 40;
+    const spendings_lastmonth = (await Get("spendings_lastmonth")) ?? "404Error";
     const Lastmonth_final = 10;
     const earnings = (await Get("earnings")) ?? "404Error";
-    const earnings_lastmonth = 60;
+    const earnings_lastmonth = 40;
     const firstLetter = Name[0].toUpperCase();
 
     return {
@@ -92,9 +92,8 @@ document.getElementById("earnings-lastmonth").innerHTML =
     "+" + earnings_percentage.toFixed(2) + "%";
 }
 
-
-
-
+document.getElementById("savings").innerHTML = "€" + Math.round(earnings - spendings);
+document.getElementById("savings-lastmonth").innerHTML = earnings_lastmonth - spendings_lastmonth;
 
 const icon = document.getElementById("icon");
 icon.innerHTML = firstLetter;
@@ -115,6 +114,10 @@ function getNameColor(name) {
 icon.style.backgroundColor = getNameColor(Name);
 }// end the async function
 initDashboard();
+
+
+
+
 
 
 

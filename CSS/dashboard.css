@@ -218,9 +218,13 @@ body {
     margin-bottom: 35px;
     justify-content: space-between;
     align-items: center;
-    
-}
 
+}
+#welcome-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}   
 
 
 /* Chatgpt's responsive @media*/
@@ -256,4 +260,50 @@ body {
         align-items: flex-start;
         flex-direction: column;
     }
+}
+
+
+
+.new-dropdown {
+    position: relative;
+}
+
+.new-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+
+    min-width: 190px;
+    padding: 6px;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+}
+
+.new-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-menu button {
+    padding: 11px 14px;
+    border: none;
+    background: transparent;
+    color: #333;
+    text-align: left;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.new-menu button:hover {
+    background: rgba(0, 113, 227, 0.10);
 }
