@@ -57,14 +57,14 @@ body {
     0 8px 32px rgba(0, 0, 0, 0.60),
     0 2px 8px rgba(0, 0, 0, 0.10),
     inset 0 1px 0 rgba(255, 255, 255, 0.78);
-    transition: 1s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: 0.3s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 #icon:hover {
             box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.90),
     0 2px 8px rgba(0, 0, 0, 0.50),
     inset 0 1px 0 rgba(255, 255, 255, 1);
-    transform: translateY(-3px);
+    transform: translateY(-1px);
 }
 #account-label {
     font-size: 16px;
@@ -103,21 +103,16 @@ body {
     transform: scale(1.02);
     
 }
+.top button.active {
+    background-color: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.45);
+}
 #dashboard {
     flex: 1;
     min-width: 0;
     padding: 35px;
 }
 
-#welcome {
-    background-color: rgba(128, 0, 128, 0);
-    width: 100%;
-    display: flex;
-    margin-bottom: 35px;
-    justify-content: space-between;
-    align-items: center;
-    
-}
 #dropdown {
     appearance: none;
     border-radius: 100px;
@@ -153,22 +148,37 @@ body {
     background-color: #0067cd;
 }
 .cards-window {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
     gap: 15px;
 }
+
+#chart-balance {
+    grid-column: 1 / -1;
+}
 .card {
-        width: 300px;
+    width: 100%;
     height: 100px;
-    
     padding: 20px;
     background-color: rgba(122, 234, 217, 0.002);
     border-radius: 25px;
-        backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     box-shadow: inset 0px 0px 41px 15px #ffffff1b;
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 14px;
 }
-#balance-euro {
+#chart-balance {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+    height: 340px;
+}
+#chart-balance canvas {
+    width: 100% !important;
+    height: 260px !important;
+}
+#amount {
     font-size: 30px;
 }
 #balance-full {
@@ -177,15 +187,13 @@ body {
     align-items: baseline;
 }
 
-#lastmonth {
+.lastmonth-amount {
     margin-left: auto;
     color: #54f5cace;
     background-color: #1ee6cf77;
-    padding: 10px;
+    padding: 5px;
     border-radius: 1000px;
     transform: translateY(-5px);
-}
-#spending {
 
 }
 /* all seperate elements with custom styling*/
@@ -196,7 +204,56 @@ body {
 }
 #msg {
     margin-bottom   : 10px;
+    font-size: 45px;
 }
 #trend {
+    font-size: 20px;
+    color: #ffffffc6;
+}
 
+#welcome {
+    background-color: rgba(128, 0, 128, 0);
+    width: 100%;
+    display: flex;
+    margin-bottom: 35px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+
+/* Chatgpt's responsive @media*/
+@media (max-width: 1000px) {
+    .cards-window {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 10px;
+    }
+
+    #sidebar {
+        width: 65px;
+    }
+
+    #account-label,
+    .top button {
+        display: none;
+    }
+
+    #dashboard {
+        padding: 20px;
+    }
+
+    .cards-window {
+        grid-template-columns: 1fr;
+    }
+
+    #welcome {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }

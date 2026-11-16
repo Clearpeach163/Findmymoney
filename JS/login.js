@@ -23,5 +23,5 @@ async function login() {
     }
 
     console.log("Successfully logged in:", data);
-    location.href = '../HTML/Dashboard.html';
+    location.href = "../HTML/Dashboard.html"
 }

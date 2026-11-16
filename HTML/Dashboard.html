@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/dashboard.css">
     <link rel="shortcut icon" href="../Src/favoicon.png" type="image/x-icon">
-   
+       <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../JS/database.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="main">
         <aside id="sidebar">
             <div class="top">
                 <div id="account">
-                    <div id="icon">D</div>
-                    <label id="account-label">David</label>
+                    <div id="icon"></div>
+                    <label id="account-label"></label>
                 </div>
-                <button>nav 1</button>
+                <button class="active">nav 1</button>
                 <button>nav 2</button>
                 <button>nav 1</button>
                 <button>nav 2</button>
@@ -30,7 +32,8 @@
         <div id="dashboard">
             <header id="welcome">
                 <div id="welcome-left">
-                    <h1 id="msg">Hey David,</h1>
+                    <h1 id="msg"></h1>
+                    
                     <p id="trend">Looks like your spending more than usual.</p>
                 </div>
                 <div id="welcome-right">
@@ -43,26 +46,53 @@
                         <option value="Max">Max</option>
                         <option value="all-data"></option>
                     </select>
-                    <button class="time" id="new">New +</button>
+                    <button class="time" id="new" title="Add a new transaction">New +</button>
                 </div>
             </header>
             <div class="cards-window">
                 <div id="balance" class="card">
                     <p>Balance</p>
                     <div id="balance-full">
-                        <h1 id="balance-euro">&euro;Error 404</h1>
-                        <div id="lastmonth">Error 404</div>
+                        <h1 id="balance-euro" class="amount"></h1>
+                        <div id="lastmonth" class="lastmonth-amount">Error 404</div>
                     </div>
                 </div>
                 <div id="spending" class="card">
-                    <h2>Spending</h2>
+                    <p>Spendings</p>
+                    <div id="balance-full">
+                        <h1 id="spendings" class="amount"></h1>
+                        <div id="spendings-lastmonth" class="lastmonth-amount">Error 404</div>
+                    </div>
                 </div>
-                <div id="earnings" class="card">
-                    <h2>Earnings</h2>
+                <div id="earning" class="card">
+                    <p>Earnings</p>
+                    <div id="balance-full">
+                        <h1 id="earnings" class="amount">Error 404</h1>
+                        <div id="earnings-lastmonth" class="lastmonth-amount">Error 404</div>
+                    </div>
+                </div>
+
+                <div id="earning" class="card">
+                    <p>Savings</p>
+                    <div id="savings-full">
+                        <h1 id="savings" class="amount">Error 404</h1>
+                        <div id="savings-lastmonth" class="lastmonth-amount">Error 404</div>
+                    </div>
+                </div>
+
+                <!--chart window-->
+              
+                <div id="chart-balance" class="card">
+                    <p>Bank balance</p>
+                    <div>
+                        <canvas id="Chart-1"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-     <script src="../JS/Dashboard.js"></script>
+    <script src="../JS/Dashboard.js" type="module"></script>
+    <script src="../JS/charts.js"></script>
+    
 </body>
-</html>
+</html> 
